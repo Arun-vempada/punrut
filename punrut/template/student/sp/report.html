@@ -1,0 +1,339 @@
+{%extends 'student/base.html'%} {%load static%} {% block content_block %}
+<div class="box-row">
+  <div class="box-cell">
+    <div class="box-inner padding">
+      <div class="row row-xs" ng-controller="ChartCtrl">
+        <div class="col-sm-12">
+          <div class="panel panel-card">
+            <div class="p">
+              <span>Monitor</span> <i class="fa fa-caret-up text-success"></i><span class="text-xs text-muted m-l-xs">1.5%</span>
+            </div>
+            <div class="panel-body">
+              <div ui-jp="plot" ui-refresh="showData" ui-options="
+            [
+              {
+                data: [[1, 7.5], [2, 7.5], [3, 5.7], [4, 8.9], [5, 10], [6, 7], [7, 9], [8, 13], [9, 7], [10, 6]], 
+                points: { show: true, radius: 4, lineWidth: 3, fillColor: 'red'}, 
+                lines:  { show: true, lineWidth: 0, fill: 0.5, fillColor: '#d3cdff' }, 
+                color:'#fff'
+              }
+            ],
+            {
+              series: { shadowSize: 0 },
+              xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+              yaxis:{ show: true, font: { color: '#ccc' }},
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+              tooltip: true,
+              tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+            }
+          " style="height:350px">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row-xs">
+        <div class="col-sm-4">
+          <div class="panel panel-card p m-b-sm">
+            <h5 class="no-margin m-b">Tasks</h5>
+            <div class="text-center">
+              <div class="inline">
+                <div ui-jp="easyPieChart" ui-options="{
+                percent: 25,
+                lineWidth: 12,
+                trackColor: '#f1f2f3',
+                barColor: '#2e9aff',
+                scaleColor: '#fff',
+                size: 167,
+                lineCap: 'butt',
+                color: '',
+                animate: 3000,
+                rotate: 270
+              }" ng-init="color = getColor(app.setting.theme.primary, 400)">
+                  <div class="font-bold text-warning">
+                    25%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div><strong>5</strong> remainning</div>
+              <small class="text-muted">Next task: 19:30 Thu</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-card p m-b-sm">
+            <h5 class="no-margin m-b">Academic</h5>
+            <div class="text-center">
+              <div class="inline">
+                <div ui-jp="easyPieChart" ui-options="{
+                percent: 50 ,
+                lineWidth: 70,
+                trackColor: '#fff',
+                barColor: '#d2ffcd',
+                scaleColor: '#fff',
+                size: 167,
+                lineCap: 'butt',
+                rotate: 0,
+                animate: 5000
+              }">
+                  <div class="font-bold h3 text-accent">
+                    50%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div><strong>32</strong> not finished</div>
+              <small class="text-muted">432 task finished</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-card p m-b-sm">
+            <h5 class="no-margin m-b">Todo</h5>
+            <div class="text-center">
+              <div class="inline">
+                <div ui-jp="easyPieChart" ui-options="{
+                percent: 50,
+                lineWidth: 70,
+                trackColor: '#fff',
+                barColor: 'pink',
+                scaleColor: '#fff',
+                size: 167,
+                lineCap: 'butt',
+                rotate: 360,
+                animate: 5000
+              }">
+                  <div class="font-bold h3 text-accent">
+                    50%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div><strong>32</strong> not finished</div>
+              <small class="text-muted">432 task finished</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-xs">
+        <div class="col-sm-4">
+          <div class="panel panel-card p m-b-sm">
+            <h5 class="no-margin m-b">Mentor Interaction</h5>
+            <div class="text-center">
+              <div class="inline">
+                <div ui-jp="easyPieChart" ui-options="{
+                percent: 25,
+                lineWidth: 12,
+                trackColor: '#f1f2f3',
+                barColor: '#ff5f2e',
+                scaleColor: '#fff',
+                size: 167,
+                lineCap: 'butt',
+                color: '',
+                animate: 3000,
+                rotate: 270
+              }" ng-init="color = getColor(app.setting.theme.primary, 400)">
+                  <div class="font-bold text-warning">
+                    25%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div><strong>5</strong> remainning</div>
+              <small class="text-muted">Next task: 19:30 Thu</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label bg-danger pull-right m-t-xs">4 left</span> Tasks
+            </div>
+            <table class="table table-striped m-b-none">
+              <thead>
+                <tr>
+                  <th>Progress</th>
+                  <th>Item</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="progress progress-sm progress-striped active no-margin m-v-xs">
+                      <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                    </div>
+                  </td>
+                  <td>App prototype design</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="progress progress-sm no-margin m-v-xs">
+                      <div class="progress-bar bg-info" data-toggle="tooltip" data-original-title="40%" style="width: 40%"></div>
+                    </div>
+                  </td>
+                  <td>Design documents</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="progress progress-sm no-margin m-v-xs">
+                      <div class="progress-bar bg-warning" data-toggle="tooltip" data-original-title="20%" style="width: 20%"></div>
+                    </div>
+                  </td>
+                  <td>UI toolkit</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="progress progress-sm no-margin m-v-xs">
+                      <div class="progress-bar bg-danger" data-toggle="tooltip" data-original-title="15%" style="width: 15%"></div>
+                    </div>
+                  </td>
+                  <td>Testing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-xs">
+        <div class="col-sm-6">
+          <div class="panel panel-card clearfix " style="padding:15px;">
+            <h5 class="no-margin m-b">Certifications</h5>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div> sdfsg</div>
+            <small class="text-muted">Next task: 19:30 Thu</small>
+          </div>
+
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-card clearfix" style="padding:15px;">
+            <h5 class="no-margin m-b">Mark sheets</h5>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="panel panel-card">
+                <div class="item">
+                  <img src="images/c1.jpg" class="w-full r-t" alt="Washed Out">
+                </div>
+              </div>
+            </div>
+            <div> sdfsg</div>
+            <small class="text-muted">Next task: 19:30 Thu</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{%endblock%}

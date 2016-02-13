@@ -1,0 +1,181 @@
+{%extends 'mentor/base.html'%} {%load static%} {% block content_block %}
+        <div class="box-row">
+          <div class="box-cell">
+            <div class="box-inner padding">
+
+
+              <div class="row">
+
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                  <div class="card">
+                    <form>
+                      <textarea class="form-control no-border p-md" rows="1" placeholder="Write something..."></textarea>
+                    </form>
+                    <div class="lt p">
+                      <button md-ink-ripple class="md-btn md-raised pull-right p-h-md blue">Post</button>
+                      <ul class="nav nav-pills nav-sm">
+                        <li><a href><i class="fa fa-camera"></i></a></li>
+                        <li><a href><i class="fa fa-video-camera"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="row no-gutter">
+                    <div class="col-xs-12">
+
+                    </div>
+
+                  </div>
+                  <div class="row row-sm">
+                    <div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-heading">
+                          <a href class="pull-left w-32 m-r">
+                            <img src="{% static 'images/nf.jpg'%}" class="w-full img-circle">
+                          </a>
+                          <div class="clear">
+                            <a href class="font-bold block">News Feed</a>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-sm">
+                    <div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="no-margin m-b">Compain</h4>
+                          <div class="text-xxs font-thin text-muted">28 March 2013</div>
+                          <p class="text-sm text-muted">
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-sm">
+                    <div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="no-margin m-b">ESEA High on Agenda of Education Issues as Congress Returns</h4>
+                          <div class="text-xxs font-thin text-muted">28 September 2014</div>
+                          <p class="text-sm text-muted">
+                            Dueling bills passed in both chambers to overhaul the federal education law face lawmakers fresh off a five-week summer sabbatical.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="row row-xs" ng-controller="ChartCtrl">
+
+                    <div class="panel panel-card">
+                      <div class="p">
+                        <!--<label class="md-switch pull-right" ng-init="showData=false">
+                <input type="checkbox" ng-model="showData">
+                <i class="green"></i>
+              </label> -->
+                        <span>Monitor</span> <i class="fa fa-caret-up text-success"></i><span class="text-xs text-muted m-l-xs">1.5%</span>
+                      </div>
+                      <div class="panel-body">
+                        <div ui-jp="plot" ui-refresh="showData" ui-options="
+                [
+                  {
+                    data: [[1, 7.5], [2, 7.5], [3, 5.7], [4, 8.9], [5, 10], [6, 7], [7, 9], [8, 13], [9, 7], [10, 6]], 
+                    points: { show: true, radius: 4, lineWidth: 3, fillColor: 'red'}, 
+                    lines:  { show: true, lineWidth: 0, fill: 0.5, fillColor: '#d3cdff' }, 
+                    color:'#fff'
+                  }
+                ],
+                {
+                  series: { shadowSize: 0 },
+                  xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+                  yaxis:{ show: true, font: { color: '#ccc' }},
+                  grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                  tooltip: true,
+                  tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+                }
+              " style="height:350px">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card blue  ">
+                    <div class="card-heading">
+                      <h2 class="font-thin">My Students</h2>
+                      <small>Follow your favorites</small>
+                    </div>
+
+                    <div class="card-divider"></div>
+                    <div class="card-body">
+                      <a href class="m-r-xs inline">
+                        <img src="{%static 'images/a4.jpg'%}" class="w-40 img-circle">
+                      </a>
+                      <a href class="m-r-xs inline">
+                        <img src="{%static 'images/a5.jpg'%}" class="w-40 img-circle">
+                      </a>
+                      <a href class="m-r-xs inline">
+                        <img src="{%static 'images/a6.jpg'%}" class="w-40 img-circle">
+                      </a>
+                      <a class="btn btn-rounded btn-info">99+</a>
+                    </div>
+                  </div>
+
+                  <div class="card blue">
+                    <div class="card-heading">
+                      <h2>Achievements</h2>
+
+                    </div>
+                    <div class="list-group list-group-lg no-bg">
+                      <a href class="list-group-item text-ellipsis">
+                        <span class="pull-right">
+                  <i class="mdi-action-trending-up i-20 text-muted-dk"></i>
+                </span> #TheWalkingDead
+                      </a>
+                      <a href class="list-group-item text-ellipsis">
+                        <span class="pull-right">
+                  <i class="mdi-action-trending-neutral i-20 text-muted-dk"></i>
+                </span> #Survivor
+                      </a>
+                      <a href class="list-group-item text-ellipsis">
+                        <span class="pull-right">
+                  <i class="mdi-action-trending-down i-20 text-muted-dk"></i>
+                </span> #Whitehouse
+                      </a>
+                    </div>
+                  </div>
+                  <div class="card blue">
+                    <div class="card-heading">
+                      <h2>Up Coming Events</h2>
+
+                    </div>
+                    <div class="list-group list-group-lg no-bg">
+                      <a href class="list-group-item text-ellipsis">
+                        <span class="pull-right">
+                  <i class="mdi-action-trending-up i-20 text-muted-dk"></i>
+                </span> #TheWalkingDead
+                      </a>
+                      <a href class="list-group-item text-ellipsis">
+                        <span class="pull-right">
+                  <i class="mdi-action-trending-neutral i-20 text-muted-dk"></i>
+                </span> #Survivor
+                      </a>
+                      <a href class="list-group-item text-ellipsis">
+                        <span class="pull-right">
+                  <i class="mdi-action-trending-down i-20 text-muted-dk"></i>
+                </span> #Whitehouse
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+{%endblock%}

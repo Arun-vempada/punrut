@@ -1,0 +1,48 @@
+{%extends 'mentor/base.html'%} {%load static%} {% block content_block %}
+<div class="box-row">
+  <div class="box-cell">
+    <div class="box-inner padding">
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading bg-white">
+              Publish work form
+              <br>
+              <small class="text-muted"></small>
+            </div>
+            <div class="panel-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="exampleInputTopic">Name of the topic</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name of the topic">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Description</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter short description">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Subject</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter the subject">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Upload Publication File</p>
+                </div>
+
+                <button type="submit" class="btn btn-default m-b">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+{%endblock%}

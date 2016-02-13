@@ -1,0 +1,109 @@
+{%extends 'student/base.html'%} {%load static%} {% block content_block %}
+        <div class="box-row">
+          <div class="box-cell">
+            <div class="box-inner padding">
+
+
+              <div class="padding-out">
+                <div class="box">
+                  <div class="col-md-3">
+                    <div style="background:url(images/a1.jpg) center center; background-size:cover">
+                      <div class="p-lg bg-white-overlay text-center">
+                        <a href class="w-xs inline">
+                          <img src="{% static 'images/a1.jpg'%}" class="img-circle img-responsive">
+                        </a>
+                        <div class="m-b m-t-sm h2">
+                          <span class="text-black">Mike</span>
+                        </div>
+                        <p>
+                          Great day, Great life
+                        </p>
+                      </div>
+                    </div>
+                    <ul class="nav nav-lists b-t" ui-nav>
+                      <li class="active">
+                        <a href="/sp/profile/">Profile</a>
+                      </li>
+                      <li>
+                        <a href="/sp/skills/">Skills</a>
+                      </li>
+                      <li>
+                        <a href="/sp/certificate/">Certifications</a>
+                      </li>
+                      <li>
+                        <a href="/sp/achievements/">Achievements</a>
+                      </li>
+                      <li>
+                        <a href="/sp/projects/">Projects</a>
+                      </li>
+                      <li>
+                        <a href="/sp/academics/">Academics</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-9 b-l bg-white bg-auto">
+                    <div class="p-md bg-light lt b-b font-bold">
+                      Achievements &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="#" class="mdi-image-add-to-photos i-24" data-toggle="modal" data-target="#basicModal"></a>
+                    </div>
+                    <br>
+                    <div class="col-sm-3 col-md-4">
+                      <div class="panel panel-card grey">
+
+                        <div class="p">
+                          <h3>Artificial Intelligence</h3>
+                          <p> Computer Science of India </p>
+                          <p> 2d56ee1</p>
+                          <p> https://www.drive.google.com </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Achievements</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form role="form" style="padding:15px;" action="/sp/achievements/" method="post" enctype="multipart/form-data">
+                       {%csrf_token%}
+                        <div class="form-group">
+                          <label for="title">Title</label>
+                          <input type="text" class="form-control" id="title" name="student_achievement_title">
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Description</label>
+                          <input class="form-control"  name="student_achievement_description">
+                        </div>
+                        <div class="form-group">
+                          <label for="link">Paste link</label>
+                          <input type="text" class="form-control" id="link" name="student_achievement_link">
+                        </div>
+                        <div class="form-group">
+                          <label for="attachFile">Attach File</label>
+
+                          <input type="file" name="student_achievement_file">
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary lg">Save</button>
+
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+{%endblock%}

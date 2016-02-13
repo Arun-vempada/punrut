@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Punrut</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="{%static 'libs/assets/animate.css/animate.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{%static 'libs/assets/font-awesome/css/font-awesome.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{%static 'libs/jquery/waves/dist/waves.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{%static 'styles/material-design-icons.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{%static 'libs/jquery/bootstrap/dist/css/bootstrap.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{%static 'styles/font.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{%static 'styles/app.css'%}" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{%static 'styles/notification.css'%}">
+   <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+</head>
+
+<body>
+  <!-- Section -->
+  <div class="app">
+    <!-- aside -->
+    <aside id="aside" class="app-aside modal fade folded" role="menu">
+      <div class="left">
+        <div class="box bg-white">
+          <div class="navbar md-whiteframe-z1 no-radius blue ">
+            <!-- brand -->
+            <a class="navbar-brand">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" style="
+                    width: 24px; height: 24px;">
+                <path d="M 50 0 L 100 14 L 92 80 Z" fill="rgba(139, 195, 74, 0.5)"></path>
+                <path d="M 92 80 L 50 0 L 50 100 Z" fill="rgba(139, 195, 74, 0.8)"></path>
+                <path d="M 8 80 L 50 0 L 50 100 Z" fill="#f3f3f3"></path>
+                <path d="M 50 0 L 8 80 L 0 14 Z" fill="rgba(220, 220, 220, 0.6)"></path>
+              </svg>
+              <img src="{%static 'images/logo.png'%}" alt="." style="max-height: 36px; display:none">
+              <span class="hidden-folded m-l inline">Punrut</span>
+            </a>
+            <!-- / brand -->
+          </div>
+          <div class="box-row">
+            <div class="box-cell scrollable hover">
+              <div class="box-inner">
+                <div class="p hidden-folded blue-50" style="background-image:url(images/bg.png); background-size:cover">
+                  <div class="rounded w-64 bg-white inline pos-rlt">
+                    <img src="{%static 'images/a0.jpg'%}" class="img-responsive rounded">
+                  </div>
+                  <a class="block m-t-sm" ui-toggle-class="hide, show" target="#nav, #account">
+                    <span class="block font-bold">Steve Jobs</span>
+                  </a>
+                </div>
+                <div id="nav">
+                  <nav ui-nav>
+                    <ul class="nav">
+                      <li>
+                        <a md-ink-ripple href="/sp/dashboard">
+
+                          <i class="icon fa fa-tachometer i-20"></i>
+                          <span class="font-normal">Dashboards</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a md-ink-ripple href="">
+                          <i class="icon mdi-action-perm-contact-cal i-20"></i>
+                          <span>My Profile</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a md-ink-ripple>
+                          <span class="pull-right text-muted">
+                          <i class="fa fa-caret-down"></i>
+                        </span>
+                          <i class="icon mdi-action-subject i-20"></i>
+                          <span class="font-normal">Materials</span>
+                        </a>
+                        <ul class="nav nav-sub">
+                          <li>
+                            <a md-ink-ripple href="/sp/collegeinfo/">College</a>
+                          </li>
+                          <li>
+                            <a md-ink-ripple href="/sp/professorinfo/">Professor</a>
+                          </li>
+                          <li>
+                            <a md-ink-ripple href="/sp/notesinfo/">My Notes</a>
+                          </li>
+                          <li>
+                            <a md-ink-ripple href="/sp/infopediainfo/">Infopedia</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a md-ink-ripple href="/sp/publishwork/">
+
+                          <i class="icon fa fa-briefcase i-20"></i>
+                          <span class="font-normal">Publish your Work</span>
+                        </a>
+
+                      </li>
+                      <li>
+                        <a md-ink-ripple href="/sp/update/">
+
+                          <i class="icon fa fa-user i-20"></i>
+                          <span class="font-normal">Update Profile</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a md-ink-ripple href="/sp/report/">
+
+                          <i class="icon fa fa-line-chart i-20"></i>
+                          <span class="font-normal">View Report</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a md-ink-ripple href="/sp/submittask/">
+
+                          <i class="icon fa fa-thumb-tack  i-20"></i>
+                          <span class="font-normal">Submit Task</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a md-ink-ripple href="/sp/thread/">
+
+                          <i class="icon fa fa-envelope  i-20"></i>
+                          <span class="font-normal">Raise a thread</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </aside>
+    <!-- / aside -->
+
+
+    <!-- content -->
+    <div id="content" class="app-content" role="main">
+      <div class="box">
+        <!-- Content Navbar Header -->
+        <div class="navbar md-whiteframe-z1 no-radius blue">
+          <!-- Open side - Naviation on mobile -->
+          <a md-ink-ripple data-toggle="modal" data-target="#aside" class="navbar-item pull-left visible-xs visible-sm"><i class="mdi-navigation-menu i-24"></i></a>
+          <!-- / -->
+
+          <div class="col-xs-4 navbar-left" style="padding:13px;">
+            <div class=" input-group">
+              <input type="text" class="form-control" placeholder="Search Punrut">
+              <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="mdi-action-search"></i></button></span>
+            </div>
+          </div>
+
+          <li class="dropdown pull-right">
+            <a md-ink-ripple data-toggle="dropdown">
+              <i class="mdi-navigation-more-vert i-24"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-scale pull-right pull-up text-color">
+              <li><a href>Settings</a></li>
+              <li><a href>Logout</a></li>
+
+            </ul>
+          </li>
+
+          <div class="dropdown pull-right">
+            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#">
+              <i class="glyphicon glyphicon-globe i-24"></i>
+            </a>
+
+            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+
+              <div class="notification-heading">
+                <h4 class="menu-title">Notifications</h4>
+              </div>
+              <li class="divider"></li>
+              <div class="notifications-wrapper">
+                <a class="content" href="#">
+
+                  <div class="notification-item">
+                    <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                  </div>
+
+                </a>
+                <a class="content" href="#">
+                  <div class="notification-item">
+                    <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                  </div>
+                </a>
+                <a class="content" href="#">
+                  <div class="notification-item">
+                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                  </div>
+                </a>
+                <a class="content" href="#">
+                  <div class="notification-item">
+                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                  </div>
+
+                </a>
+                <a class="content" href="#">
+                  <div class="notification-item">
+                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                  </div>
+                </a>
+                <a class="content" href="#">
+                  <div class="notification-item">
+                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                  </div>
+                </a>
+
+              </div>
+              <li class="divider"></li>
+              <div class="notification-footer">
+                <h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+            </ul>
+
+          </div>
+
+        </div>
+        <!-- Content navbar Header-->
+        {% block content_block %}
+        {%endblock%}
+
+      </div>
+    </div>
+    <!-- / content -->
+  </div>
+  <!-- /Section -->
+
+
+  <script src="{% static 'libs/jquery/jquery/dist/jquery.js'%}"></script>
+  <script src="{% static 'libs/jquery/bootstrap/dist/js/bootstrap.js'%}"></script>
+  <script src="{% static 'libs/jquery/waves/dist/waves.js'%}"></script>
+
+  <script src="{% static 'scripts/ui-load.js'%}"></script>
+  <script src="{% static 'scripts/ui-jp.config.js'%}"></script>
+  <script src="{% static 'scripts/ui-jp.js'%}"></script>
+  <script src="{% static 'scripts/ui-nav.js'%}"></script>
+  <script src="{% static 'scripts/ui-toggle.js'%}"></script>
+  <script src="{% static 'scripts/ui-form.js'%}"></script>
+  <script src="{% static 'scripts/ui-waves.js'%}"></script>
+  <script src="{% static 'scripts/ui-client.js'%}"></script>
+  <script type="text/javascript" src="{% static 'scripts/notification.js'%}"></script>
+
+
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  // $(function() {
+  //   $( "#datepicker" ).datepicker();
+  // });
+
+
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+  </script>
+
+</body>
+
+</html>

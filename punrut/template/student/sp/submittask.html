@@ -1,0 +1,46 @@
+{%extends 'student/base.html'%} {%load static%} {% block content_block %}
+<div class="box-row">
+        <div class="box-cell">
+          <div class="box-inner padding">
+            
+
+      <div class="col-lgs-12">
+      <div class="panel panel-default">
+        
+        <div class="panel-body">
+          <form role="form">
+           
+            <div class="form-group">
+            <label>Select Task</label>
+            <select name="task" class="form-control">
+              <option value="volvo">Dbms</option>
+              <option value="saab">os</option>
+              <option value="fiat">Flat</option>
+              <option value="audi">Machine learning</option>
+            </select>         
+           </div>
+
+            <div class="form-group">
+              <label >Description</label>
+              <div >
+                <textarea class="form-control" rows="5"></textarea>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="exampleInputFile">Attach File</label>
+              <input type="file" id="exampleInputFile">
+              
+            </div>
+            <div class="checkbox">
+              
+            </div>
+            <button type="submit" class="btn btn-default m-b">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+   
+  </div></div></div>
+{%endblock%}
